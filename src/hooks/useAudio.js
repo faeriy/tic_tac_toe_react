@@ -9,12 +9,19 @@ export function useAudio() {
 
     // Initialize audio elements
     useEffect(() => {
-        backgroundMusicRef.current = new Audio('/sounds/8-bit-melody-loop-37872.mp3');
-        soundEffectRef.current = new Audio('/sounds/8-bit-powerup-6768.mp3');
+        // Use the base path from Vite config
+        const baseUrl = import.meta.env.BASE_URL || '/';
+
+        backgroundMusicRef.current = new Audio(`${baseUrl}sounds/theme.mp3`);
+        soundEffectRef.current = new Audio(`${baseUrl}sounds/click.mp3`);
         
         backgroundMusicRef.current.loop = true;
         backgroundMusicRef.current.volume = 0.3; // Lower volume for background music
         soundEffectRef.current.volume = 0.5;
+
+        // Preload the audio files
+        backgroundMusicRef.current.load();
+        soundEffectRef.current.load();
 
         return () => {
             if (backgroundMusicRef.current) {

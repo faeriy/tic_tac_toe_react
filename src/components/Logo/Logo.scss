@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  image-rendering: pixelated;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: lowercase;
+  
+  .github-icon {
+    font-size: 24px;
+    color: #fff;
+    filter: drop-shadow(2px 2px 0 #000);
+  }
+  
+  .logo-text {
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 0 #000;
+    letter-spacing: 1px;
+  }
+} 

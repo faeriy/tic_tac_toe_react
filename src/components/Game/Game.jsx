@@ -1,5 +1,6 @@
 import "./Game.scss"
 import Board from "../Board/Board";
+import Logo from "../Logo/Logo";
 import { useState } from 'react';
 import { useAudio } from '../../hooks/useAudio';
 
@@ -50,34 +51,37 @@ export default function Game() {
 
     return (
         <div className="game">
-            <div className="game__board">
-                <Board 
-                    xIsNext={xIsNext} 
-                    squares={currentSquares} 
-                    onPlay={handlePlay}
-                    onWin={playWinSound}
-                    onDraw={playDrawSound}
-                />
-            </div>
-            <div className="game__info">
-                <div className="game__audio-controls">
-                    <button 
-                        className={`game__audio-button ${isMusicPlaying ? 'active' : ''}`}
-                        onClick={toggleBackgroundMusic}
-                        title="Toggle background music"
-                    >
-                        🎵 {isMusicPlaying ? 'ON' : 'OFF'}
-                    </button>
-                    <button 
-                        className={`game__audio-button ${isSoundEnabled ? 'active' : ''}`}
-                        onClick={toggleSoundEffects}
-                        title="Toggle sound effects"
-                    >
-                        🔊 {isSoundEnabled ? 'ON' : 'OFF'}
-                    </button>
+            <Logo />
+            <div className="game__content">
+                <div className="game__board">
+                    <Board 
+                        xIsNext={xIsNext} 
+                        squares={currentSquares} 
+                        onPlay={handlePlay}
+                        onWin={playWinSound}
+                        onDraw={playDrawSound}
+                    />
                 </div>
-                <div className="game__moves-header">Game History</div>
-                <ol>{moves}</ol>
+                <div className="game__info">
+                    <div className="game__audio-controls">
+                        <button 
+                            className={`game__audio-button ${isMusicPlaying ? 'active' : ''}`}
+                            onClick={toggleBackgroundMusic}
+                            title="Toggle background music"
+                        >
+                            🎵 {isMusicPlaying ? 'ON' : 'OFF'}
+                        </button>
+                        <button 
+                            className={`game__audio-button ${isSoundEnabled ? 'active' : ''}`}
+                            onClick={toggleSoundEffects}
+                            title="Toggle sound effects"
+                        >
+                            🔊 {isSoundEnabled ? 'ON' : 'OFF'}
+                        </button>
+                    </div>
+                    <div className="game__moves-header">Game History</div>
+                    <ol>{moves}</ol>
+                </div>
             </div>
         </div>
     );
