@@ -1,0 +1,87 @@
+/*Файл обнулення стилів за замовчуванням*/
+*, *::before, *::after {
+    font-family: inherit;
+    box-sizing:border-box;              
+    -webkit-box-sizing: border-box;
+    padding: 0;      /*внутрішній відступ*/
+    margin: 0;       /*Зовнішній відступ*/
+    border: 0;       /*межа-контур*/
+}
+
+/*Видаляємо лінії обводки у деяких браузерів*/
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+
+/*Робимо вказані нижче теги блочними*/
+nav, footer, header, aside{display:block;}
+
+strong {font-weight: 400;}
+
+/*Урівнюємо поведінку шрифтів та елементів для різних браузерів*/
+html, body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {font-family: inherit;}
+
+/*псевдоелемент, котрий видаляє хрестик із форми вводу у браузері Internet Explorer*/
+input::-ms-clear {display: none;} 
+
+// Видаляємо стрілки в input типу Number
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+// input[type=number] {
+//     -moz-appearance:textfield; /* Firefox */
+// }
+
+// Видаляємо стрілки в input типу Number
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+button {
+    color: inherit;
+    background-color: #ffffff00;
+    cursor: pointer;
+}
+
+/*Псевдоелемент, котрий видаляє лишні відступи і пропуски у браузері Firefox*/
+/*В даному випадку застосований до кнопки*/
+button::-moz-focus-inner { padding: 0; border: 0;}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul, li {list-style: none;}
+img {vertical-align: top;}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+// p + p {
+//     margin-top: 1em;
+// }

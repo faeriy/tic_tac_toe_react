@@ -1,0 +1,44 @@
+.board {
+    width: fit-content;
+    margin: 0 auto;
+    box-shadow: 0px 0px 15px 0px #000;
+
+    &__row {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.status {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 8px;
+
+    &.winner {
+        background: linear-gradient(45deg, #4CAF50, #45a049);
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        animation: celebrate 0.6s ease-in-out;
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+    }
+
+    &.draw {
+        background: linear-gradient(45deg, #FF9800, #f57c00);
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+    }
+}
+
+@keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
